@@ -88,9 +88,10 @@ async def button(update: Update, context: CallbackContext) -> None:
         current_page += 1
 
     await query.answer()
-    await send_pools(query, context, current_pool_type)  # Adjust according to your needs
+    await send_pools(query, context, current_pool_type)
 
 def main() -> None:
+    # BOT_TOKEN in config.py
     application = ApplicationBuilder().token(BOT_TOKEN).build()
 
     application.add_handler(CommandHandler("allpools", all_pools))
